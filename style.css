@@ -80,7 +80,7 @@ nav ul{
     list-style: none;
     display: flex;
     margin: 0;
-    padding: 0;
+    padding: 1.3em 0;
     justify-content: space-around;
 }
 nav a{
@@ -106,8 +106,8 @@ a:hover,a:focus{
 .hero{
     background-color: var(--clr-accent);
     background-image: url('assets/hero-bg.jpg');
+    background-blend-mode: multiply;
     background-position: center;
-    background-blend-mode: luminosity;
     color: wheat;
     text-align: center;
     background-attachment: fixed;
@@ -181,8 +181,12 @@ section{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    max-width: 530px;
 }
 
+.product-showcase{
+    padding-bottom: 3.5em;
+}
 .product{
     background-color: #f0f0f0;
     border-radius: 0.35em;
@@ -214,6 +218,7 @@ footer{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 8em;
 }
 
 footer-nav{
@@ -247,7 +252,7 @@ footer a{
     margin: auto;
 }
 
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 700px){
     section{
         padding: 6em 1em;
     }
@@ -256,9 +261,11 @@ footer a{
         flex-direction: row;
         justify-content: center;
     }
-
     .btn{
         flex-basis: 120px;
+    }
+    .avoid-flex-basis{
+        flex-basis: auto;
     }
 
     .about-us{
@@ -295,9 +302,20 @@ footer a{
     }
     .products{
         flex-direction: row;
+        max-width: 1200px;
+    }
+
+    .product + .product{
+        margin-left: 1.5em;
     }
 
     .product{
-        flex: 0 1 34%;
+        flex: 1 1 223px;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .hero{
+        padding: 20vh 1em;
     }
 }
